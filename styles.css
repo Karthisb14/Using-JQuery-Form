@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+ #delicon{
+    position: relative;
+    bottom: 2px;
+}
+
+#editicon{
+    position: relative;
+    right: 58px;
+    bottom: 2px;
+} 
