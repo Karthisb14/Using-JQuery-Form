@@ -14,27 +14,24 @@ $(document).ready(() => {
 
         var arrayitem = JSON.parse(localStorage.getItem("arrayitem") || "[]");
 
-        var edit = arrayitem.filter(x => x.email === formdata.email);
+        var getitem = arrayitem.find(x => x.email === formdata.email);
 
-        if(edit.length == 1){
-            arrayitem.forEach((e) => {
-                if(e.email == edit[0].email){
-                    e.firstname = formdata.firstname,
-                    e.lastname = formdata.lastname,
-                    e.email = formdata.email,
-                    e.password = formdata.password,
-                    e.telephone = formdata.telephone
-                }   
-            })
+        if(getitem != undefined) {
+            getitem.firstname = formdata.firstname,
+            getitem.lastname = formdata.lastname,
+            getitem.email = formdata.email,
+            getitem.password = formdata.password,
+            getitem.telephone = formdata.telephone
+
             $('#firstname').attr('value', '');
             $('#lastname').attr('value', '');
             $('#email').attr('value', '');
             $('#password').attr('value', '');
             $('#telephone').attr('value', '');
-
         }else{
             arrayitem.push(formdata);
         }
+        // console.log(getitem);
 
         localStorage.setItem("arrayitem", JSON.stringify(arrayitem));
 
@@ -80,7 +77,7 @@ function deleteItem(ele) {
     displaydata();
 }
 
-function EditItem(ele){
+function EditItem(ele) {
 
     var allitem = JSON.parse(localStorage.getItem("arrayitem"));
 
