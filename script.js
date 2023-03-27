@@ -81,13 +81,13 @@ function EditItem(ele) {
 
     var allitem = JSON.parse(localStorage.getItem("arrayitem"));
 
-    var edititem = allitem.filter(x => x.email === ele);
+    var edititem = allitem.find(x => x.email === ele);
     // console.log(edititem);
 
-    $('#firstname').attr('value', edititem[0].firstname);
-    $('#lastname').attr('value', edititem[0].lastname);
-    $('#email').attr('value', edititem[0].email);
-    $('#password').attr('value', edititem[0].password);
-    $('#telephone').attr('value', edititem[0].telephone);
+    $('#firstname').attr('value', edititem.firstname);
+    $('#lastname').attr('value', edititem.lastname);
+    $('#email').attr('value', edititem.email);
+    $('#password').attr('value', edititem.password);
+    $('#telephone').attr('value', edititem.telephone);
 
 }
